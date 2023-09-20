@@ -1,0 +1,40 @@
+.lotify__addSuccess{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 123, 0.4);;
+    background: url(https://i.gifer.com/PYh.gif) left top no-repeat rgba(0, 0, 123, 0.4);
+    animation: showLotify linear 0.3s;
+    z-index: 5;
+}
+.lotify__addSuccess_box{
+    position: absolute;
+    background-color: #fff;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    width: 40vw;
+    height: 30vh;
+    background: url(https://i.gifer.com/6ob.gif) rgb(255, 255, 255);
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+@keyframes showLotify {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    75%{
+        opacity: 0.76;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

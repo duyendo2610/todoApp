@@ -1,0 +1,56 @@
+.login_wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://antimatter.vn/wp-content/uploads/2022/06/background-may.jpg) no-repeat center;
+}
+.login_box{
+    position: absolute;
+    background-color: #fff;
+    width: 30vw;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 40px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2) ;
+}
+.input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: all ease-in-out 0.3s;
+}
+.input:hover{
+    border-color:  green;
+}
+.input:focus{
+    box-shadow: 2px 2px 3px #ccc;
+}
+
+.Login_btn{
+    border-radius: 16px;
+    padding: 4px 0;
+    cursor: pointer;
+    background-image: linear-gradient(to right,#58b7e0 , #e038f4);
+    color: #fff;
+    font-size: 20px;
+    transition: background-image linear 1s;
+}
+.Login_btn:hover{
+    background-image: linear-gradient(to left,#58b7e0 , #e038f4);
+}
+
+
+.eye{
+    width: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

@@ -1,0 +1,32 @@
+.wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loading{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 6px solid #ccc;
+    border-top: 6px solid #3498db ;
+    animation:  loading linear 2s infinite;
+    margin-bottom: 200px;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
