@@ -47,9 +47,9 @@ const ListJob = () => {
         const newListJob = JSON.parse(JSON.stringify(jobDo));
         newListJob.sort((a:TSateJob,b:TSateJob) => {
             if(newListJob){
-                const dl1 = a.deadline ;
-                const dl2 = b.deadline ;
-                return new Date(dl1) - new Date(dl2);
+                const dl1 = new Date(a.deadline).getDate() ;
+                const dl2 = new Date(b.deadline).getDate() ;
+                return dl1 - dl2;
             }
         });
         setJobDo(newListJob);
@@ -90,7 +90,7 @@ const ListJob = () => {
         </div>
         <div className="row mb-3 mt-2">
             <Button onClick={doneAll} variant='success' className='w-25 d-flex align-items-center'><ArchiveTick style={{marginRight:"10px"}} size="20" color="#fff"/> Done All</Button>
-            <Button onClick={sortDeadline} className='w-25 ms-3 d-flex align-items-center'><Sort style={{marginRight:"10px"}} size="20" color="#fff"/> Sort by</Button>
+            <Button onClick={sortDeadline} className='w-25 ms-3 d-flex align-items-center'><Sort style={{marginRight:"10px"}} size="20" color="#fff"/> Sort</Button>
         </div>
         {searchDataList.map((job:TSateJob)=>{
                 return(
