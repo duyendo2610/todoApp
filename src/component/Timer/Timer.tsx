@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 const formatTimer = (date : Date) => {
     const hours = `0${date.getHours()}`;

@@ -10,6 +10,7 @@ import AddSusccess from "../notify/addSuccess/AddSusccess";
 import NoDataNotify from "../notify/noDataNotify/NoDataNotify";
 import UpdateJob from "../notify/updateJob/UpdateJob";
 import { RootState } from "../../redux/reducer";
+import { TSateJob } from "../../redux/reducer/ListJob";
 
 const date = new Date();
 const month = `0${date.getMonth()}`;
@@ -18,7 +19,7 @@ const now = `${date.getFullYear()}-${month.slice(-2, 3)}-${day.slice(-2, 3)}`;
 
 const Task = () => {
   // const listJob = useSelector(state => state.addListJobReducer);
-  const jobUpdate = useSelector((state: RootState) => state.jobUpdateReducer);
+  const jobUpdate:TSateJob = useSelector((state: RootState) => state.jobUpdateReducer);
   const dispatch = useDispatch();
   const [data, setData] = useState("");
   const [deadline, setDeadline] = useState(now);

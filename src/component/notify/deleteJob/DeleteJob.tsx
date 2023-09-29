@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './deleteJob.module.css'
 import { TickCircle } from 'iconsax-react'
 

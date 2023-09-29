@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './doneJob.module.css'
 import { Coffee } from 'iconsax-react'
 

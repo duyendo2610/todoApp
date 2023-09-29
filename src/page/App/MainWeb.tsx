@@ -63,14 +63,7 @@ const MainWeb = () => {
             </div>
             <div className="col-5 text-center ">
               <Task></Task>
-            </div>
-          </div>
-        </div>
-        <div className="container mt-5">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-5 text-center"></div>
-            <div className="col-5  text-center">
-              <ListDone></ListDone>
+              <div className="mt-4"><ListDone></ListDone></div>
             </div>
           </div>
         </div>

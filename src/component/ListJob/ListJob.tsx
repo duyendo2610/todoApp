@@ -7,6 +7,7 @@ import { jobUpdateAction } from '../../redux/action/jobUpdateAction';
 import RelexTime from '../notify/RelexDay/RelexTimeNotify';
 import DoneJobNotify from '../notify/doneJobNotify/DoneJob';
 import { RootState } from '../../redux/reducer';
+import { TSateJob } from '../../redux/reducer/ListJob';
 
 const ListJob = () => {
     const listJob = useSelector((state: RootState) => state.addListJobReducer);
@@ -22,7 +23,7 @@ const ListJob = () => {
     const getSearchData = (e: { target: { value: React.SetStateAction<string>; }; })=>{
         setSearchData(e.target.value)
     }
-    const doneJob =(job: { id: React.Key | null | undefined; timeAdd: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; name: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; deadline: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; })=>{
+    const doneJob =(job:TSateJob )=>{
         dispatch(doneJobAction(job))
         setDoneJobNotify(true)
         setTimeout(() => {
@@ -39,14 +40,16 @@ const ListJob = () => {
         }))
         setRelexNotify(true)
     }
-    const sendJobUpdate =(job: { id: React.Key | null | undefined; timeAdd: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; name: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; deadline: string | number | boolean | React.ReactPortal | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; })=>{
+    const sendJobUpdate =(job:TSateJob)=>{
         dispatch(jobUpdateAction(job))
     }
     const sortDeadline = ()=>{
         const newListJob = JSON.parse(JSON.stringify(jobDo));
-        newListJob.sort((a: { deadline: string | number | Date; }, b: { deadline: string | number | Date; }) => {
+        newListJob.sort((a:TSateJob,b:TSateJob) => {
             if(newListJob){
-                return (new Date(a.deadline) - new Date(b.deadline) )
+                const dl1 = a.deadline ;
+                const dl2 = b.deadline ;
+                return new Date(dl1) - new Date(dl2);
             }
         });
         setJobDo(newListJob);
@@ -89,7 +92,7 @@ const ListJob = () => {
             <Button onClick={doneAll} variant='success' className='w-25 d-flex align-items-center'><ArchiveTick style={{marginRight:"10px"}} size="20" color="#fff"/> Done All</Button>
             <Button onClick={sortDeadline} className='w-25 ms-3 d-flex align-items-center'><Sort style={{marginRight:"10px"}} size="20" color="#fff"/> Sort by</Button>
         </div>
-        {searchDataList.map((job: { id: React.Key | null | undefined; timeAdd: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; deadline: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; })=>{
+        {searchDataList.map((job:TSateJob)=>{
                 return(
                     <div key={job.id} className="container job_Wrap border border-warning-subtle rounded-2 py-2 mt-1">
                         <div className="row align-items-center justify-content-between ">

@@ -13,7 +13,7 @@ export type TSateJob = {
   completed: boolean;
   id: string;
   timeAdd: string;
-  deadline: string;
+  deadline: any;
 };
 
 const data :Array<TSateJob> = JSON.parse(localStorage.getItem("data") as string) 
@@ -63,13 +63,13 @@ const addListJobReducer = (
       return a
     case doneAllJob:
       const newState6 = JSON.parse(JSON.stringify(state));
-      newState6.map((job: { completed: boolean }) => {
+      const b = newState6.map((job: { completed: boolean }) => {
         if (job.completed === false) {
           job.completed = true;
         }
         return job;
       });
-      localStorage.setItem("data",JSON.stringify(a))
+      localStorage.setItem("data",JSON.stringify(b))
       return newState6;
       case updateListJob:
         
