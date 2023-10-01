@@ -90,7 +90,7 @@ const ListJob = () => {
         </div>
         <div className="row mb-3 mt-2">
             <Button onClick={doneAll} variant='success' className='w-25 d-flex align-items-center'><ArchiveTick style={{marginRight:"10px"}} size="20" color="#fff"/> Done All</Button>
-            <Button onClick={sortDeadline} className='w-25 ms-3 d-flex align-items-center'><Sort style={{marginRight:"10px"}} size="20" color="#fff"/> Sort</Button>
+            <Button onClick={sortDeadline} className='w-25 ms-3 d-flex align-items-center '><Sort style={{marginRight:"20px"}} size="20" color="#fff"/> Sort</Button>
         </div>
         {searchDataList.map((job:TSateJob)=>{
                 return(
